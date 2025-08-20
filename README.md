@@ -9,9 +9,13 @@ Install the package:
 pip install vibesort
 ```
 
-Set your OpenAI API key as an environment variable.
+Set your API key as an environment variable. ``OPENAI_API_KEY`` enables the
+OpenAI backend while ``ARK_API_KEY`` enables DouBao (Ark).
 ```bash
-export OPENAI_API_KEY=your_key_here
+export OPENAI_API_KEY=your_openai_key
+# or
+export ARK_API_KEY=your_ark_key
+# optional: export ARK_MODEL=ep-xxxxxx
 ```
 
 ```python
@@ -30,7 +34,8 @@ pytest tests/
 ## Dependencies
 
 - openai
-- pydantic  
+- volcengine-python-sdk[ark]
+- pydantic
 - typing-extensions
 
-⚠️ Requires OpenAI API key. Experimental project - not for production use.
+⚠️ Requires an OpenAI or DouBao API key. Experimental project - not for production use.
